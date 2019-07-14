@@ -1,0 +1,89 @@
+<body>
+   
+    <h3>Angular Operation</h3>
+    <h2>ADD EMPLOYEE</h2>
+
+    <table>
+        <tr>
+            <td>ID</td>
+            <td><input type="text" #eid></td>
+        </tr>
+
+        <tr>
+            <td>Name</td>
+            <td><input type="text" #ename></td>
+        </tr>
+
+        <tr>
+            <td>Salary</td>
+            <td><input type="text" #esalary></td>
+        </tr>
+
+        <tr>
+            <td>Department</td>
+            <td><input type="text" #edepartment></td>
+        </tr>
+
+        <tr>
+            <td><button type="button" (click) = "addEmployee(eid.value, ename.value, esalary.value, edepartment.value)">Add Employee</button></td>
+            <td></td>
+        </tr>
+
+    </table>
+
+    <h2>SHOW ALL EMPLOYEES</h2>
+
+    <table border=1px>
+        <tr align="center">
+            <td>ID</td>
+            <td>Name</td>
+            <td>Salary</td>
+            <td>Department</td>
+            <td colspan="2">ACTION</td>
+        </tr>
+
+        <tr *ngFor="let item of employees; index as i">
+            <td>{{item.empId}}</td>
+            <td>{{item.empName}}</td>
+            <td>{{item.empSal}}</td>
+            <td>{{item.empDep}}</td>
+            <td><button type="button" (click) = "updateEmployee(i,uid,uname,usalary,udept)">UPDATE</button></td>
+            <td><button type="button" (click) = "deleteOnClick(i)">DELETE</button></td>
+        </tr>
+
+    </table>
+
+    <h2>UPDATE EMPLOYEE</h2>
+
+    <table>
+        <tr>
+            <td>ID</td>
+            <td><input type="text" #uid></td>
+        </tr>
+
+        <tr>
+            <td>Name</td>
+            <td><input type="text" #uname></td>
+        </tr>
+
+        <tr>
+            <td>Salary</td>
+            <td><input type="text" #usalary></td>
+        </tr>
+
+        <tr>
+            <td>Department</td>
+            <td><input type="text" #udept></td>
+        </tr>
+
+        <tr>
+            <td><button type="button" (click)="updateOnClick(uid,uname,usalary,udept)">Update Employee</button></td>
+            <td></td>
+        </tr>
+
+    </table>
+
+   
+
+
+</body>
